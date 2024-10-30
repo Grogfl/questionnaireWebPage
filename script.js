@@ -35,10 +35,14 @@ function showResults() {
   const answer1 = document.querySelector('input[name="question1"]:checked')?.value || 'Nothing';
   const answer2 = document.querySelector('input[name="question2"]').value || 'Nothing';
   const answer3 = document.querySelector('select[name="question3"]').value || 'Nothing';
+  const answer4 = document.querySelector('input[name="question4"]').value || 'Nothing';
+  const activities = document.querySelectorAll('input[name = "question5"]:checked');
+  const answer5 = Array.from(activities).map((checkbox) => checkbox.value);
   // also while on results need to hide the next button
   const resultsDiv = document.getElementById('results');
   resultsDiv.style.display = 'block';
   // add the results stuff here
+  // for the aditional comments what do?
   resultsDiv.innerHTML =
     '<h3>You Answered:</h3> <p>For question 1 you answered ' +
     answer1 +
@@ -46,6 +50,10 @@ function showResults() {
     answer2 +
     '</p><p>For question 3 you answered ' +
     answer3 +
+    '</p><p>For question 4 you answered ' +
+    answer4 +
+    '</p><p>For question 5 you answered ' +
+    (answer5.length > 0 ? answer5.join(', ') : 'Nothing') +
     '</p>';
 }
 function hideResults() {

@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="introduction">
-      <p>ok I need to make some shit that looks impressive lmao</p>
+      <p>Here is a simple questionnaire</p>
     </div>
     <!-- reconfig this shit the submit button isn't connected to the form -->
     <div class="questionnaireContainer">
@@ -30,7 +30,8 @@
           <!-- make the different questions use different input types -->
           <!-- use a pattern so they can't input a letter or something? -->
           <div class="question" id="question2">
-            <label>What's your lucky number?</label><br />
+            <p>What's your lucky number?</p>
+            <br />
             <input required pattern="[0-9]+" type="text" name="question2" /><br />
           </div>
           <div class="question" id="question3">
@@ -45,15 +46,15 @@
           </div>
           <div class="question" id="question4">
             <p>How many siblings do you have?</p>
-            <input type="number" name="question4" min="0" max="10" />
+            <input type="number" name="question4" min="0" />
           </div>
           <!-- addtional comments? -->
           <div class="question" id="question5">
             <p>Which of these leisure activities do you enjoy? (Select all that apply)</p>
-            <input type="checkbox" name="question5[]" value="reading" /> Reading<br />
-            <input type="checkbox" name="question5[]" value="traveling" /> Traveling<br />
-            <input type="checkbox" name="question5[]" value="cooking" /> Cooking<br />
-            <input type="checkbox" name="question5[]" value="sports" /> Sports<br />
+            <input type="checkbox" name="question5" value="reading" /> Reading<br />
+            <input type="checkbox" name="question5" value="traveling" /> Traveling<br />
+            <input type="checkbox" name="question5" value="cooking" /> Cooking<br />
+            <input type="checkbox" name="question5" value="sports" /> Sports<br />
           </div>
           <div class="question" id="question6"><textarea rows="4" cols="40"></textarea><br /></div>
           <div id="results"></div>
