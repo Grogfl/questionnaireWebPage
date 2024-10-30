@@ -33,13 +33,20 @@ function showResults() {
   console.log('showresults called');
   document.getElementById('question' + currentQuestion).classList.remove('active');
   const answer1 = document.querySelector('input[name="question1"]:checked')?.value || 'Nothing';
-
+  const answer2 = document.querySelector('input[name="question2"]').value || 'Nothing';
+  const answer3 = document.querySelector('select[name="question3"]').value || 'Nothing';
   // also while on results need to hide the next button
   const resultsDiv = document.getElementById('results');
   resultsDiv.style.display = 'block';
   // add the results stuff here
   resultsDiv.innerHTML =
-    '<h3>You Answered:</h3> <p>For question 1 you answered ' + answer1 + '</p>';
+    '<h3>You Answered:</h3> <p>For question 1 you answered ' +
+    answer1 +
+    '</p><p>For question 2 you answered ' +
+    answer2 +
+    '</p><p>For question 3 you answered ' +
+    answer3 +
+    '</p>';
 }
 function hideResults() {
   const resultsDiv = document.getElementById('results');

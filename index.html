@@ -14,6 +14,7 @@
     <div id="introduction">
       <p>ok I need to make some shit that looks impressive lmao</p>
     </div>
+    <!-- reconfig this shit the submit button isn't connected to the form -->
     <div class="questionnaireContainer">
       <div class="questionArea">
         <!-- add several questions with different input types -->
@@ -30,7 +31,7 @@
           <!-- use a pattern so they can't input a letter or something? -->
           <div class="question" id="question2">
             <label>What's your lucky number?</label><br />
-            <input required pattern="[0-9]+" type="text" name="lucky_number" /><br />
+            <input required pattern="[0-9]+" type="text" name="question2" /><br />
           </div>
           <div class="question" id="question3">
             <p>What is your preferred pet?</p>
@@ -62,6 +63,7 @@
       </div>
       <div id="questionButtons">
         <!-- do something similar to the questions, only have the buttons appear when appropriate -->
+        <!-- move the buttons into the form I think -->
         <!-- make the next button a submit maybe> -->
         <!-- change the buttons so that next is just next and there is a new submit button that appears on the last question -->
         <button id="previousButton" type="button" onclick="previousQuestion()">Previous</button>
