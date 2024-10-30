@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Questionnaire</title>
-    <div id="header">
-      <h1>Gamer</h1>
-      <p>hello</p>
-    </div>
   </head>
   <body>
     <div id="introduction">
@@ -18,7 +14,7 @@
     <div class="questionnaireContainer">
       <div class="questionArea">
         <!-- add several questions with different input types -->
-        <form onsubmit="return validateInput">
+        <form onsubmit="return validateInput()">
           <!--change to jQuery? seems like a better way to handle-->
           <div class="question active" id="question1">
             <p>What is your favorite movie genre?</p>
@@ -37,6 +33,7 @@
           <div class="question" id="question3">
             <p>What is your preferred pet?</p>
             <select name="question3">
+              <option value="Nothing"></option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
               <option value="bird">Bird</option>
