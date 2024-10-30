@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Questionnaire</title>
     <div id="header">
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css" />
-      <title>Questionnaire</title>
       <h1>Gamer</h1>
       <p>hello</p>
     </div>
@@ -14,57 +14,64 @@
     <div id="introduction">
       <p>ok I need to make some shit that looks impressive lmao</p>
     </div>
-    <div class="questionnaire">
-      <!-- add several questions with different input types -->
-      <form onsubmit="return false">
-        <!--change to jQuery? seems like a better way to handle-->
-        <div class="question active" id="question1">
-          <label>What is your favourite colour?</label><br />
-          <input type="radio" name="question1" value="Red" />Red<br />
-          <input type="radio" name="question1" value="Green" />Green<br />
-          <input type="radio" name="question1" value="Blue" />Blue<br />
-          <input type="color" /><br />
-        </div>
-        <!-- make the different questions use different input types -->
-        <!-- use a pattern so they can't input a letter or something? -->
-        <div class="question" id="question2">
-          <label>What's your lucky number?</label><br />
-          <input pattern="[0-9]+" type="text" name="lucky_number" /><br />
-        </div>
-        <div class="question" id="question3">
-          <label>idk man lmao</label><br />
-          <input type="checkbox" name="idk[]" value="3" />3<br />
-          <input type="checkbox" name="idk[]" value="3" />3<br />
-          <input type="checkbox" name="idk[]" value="3" />3<br />
-          <input type="checkbox" name="idk[]" value="3" />3<br />
-        </div>
-        <!-- include a datalist question -->
-        <div class="question" id="question4">
-          <label>Cheese</label>
-          <input list="cheese" />
-          <datalist id="cheese">
-            <option value="cheese">Cheese</option>
-            <option value="cheese">Cheese</option>
-          </datalist>
-        </div>
-        <!-- addtional comments? -->
-        <div class="question" id="question5"><textarea rows="4" cols="40"></textarea><br /></div>
-        <div id="questionButtons">
-          <!-- do something similar to the questions, only have the buttons appear when appropriate -->
-          <!-- make the next button a submit maybe> -->
+    <div class="questionnaireContainer">
+      <div class="questionArea">
+        <!-- add several questions with different input types -->
+        <form onsubmit="return validateInput">
+          <!--change to jQuery? seems like a better way to handle-->
+          <div class="question active" id="question1">
+            <p>What is your favorite movie genre?</p>
+            <input type="radio" name="question1" value="action" /> Action<br />
+            <input type="radio" name="question1" value="comedy" /> Comedy<br />
+            <input type="radio" name="question1" value="drama" /> Drama<br />
+            <input type="radio" name="question1" value="horror" /> Horror<br />
+          </div>
+          <!-- make the different questions use different input types -->
+          <!-- use a pattern so they can't input a letter or something? -->
+          <div class="question" id="question2">
+            <label>What's your lucky number?</label><br />
+            <input required pattern="[0-9]+" type="text" name="lucky_number" /><br />
+          </div>
+          <div class="question" id="question3">
+            <p>What is your preferred pet?</p>
+            <select name="question3">
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="bird">Bird</option>
+              <option value="fish">Fish</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+          <div class="question" id="question4">
+            <p>How many siblings do you have?</p>
+            <input type="number" name="question4" min="0" max="10" />
+          </div>
+          <!-- addtional comments? -->
+          <div class="question" id="question5">
+            <p>Which of these leisure activities do you enjoy? (Select all that apply)</p>
+            <input type="checkbox" name="question5[]" value="reading" /> Reading<br />
+            <input type="checkbox" name="question5[]" value="traveling" /> Traveling<br />
+            <input type="checkbox" name="question5[]" value="cooking" /> Cooking<br />
+            <input type="checkbox" name="question5[]" value="sports" /> Sports<br />
+          </div>
+          <div class="question" id="question6"><textarea rows="4" cols="40"></textarea><br /></div>
           <div id="results"></div>
-          <button id="previousButton" type="button" onclick="previousQuestion()">Previous</button>
-          <button name="nextButton" id="nextButton" type="submit" onclick="nextQuestion()">
-            Next
-          </button>
-        </div>
 
-        <!-- add a question for holiday locations? -->
-        <span>Do something with spans?</span>
-        <!-- then add the results thing that will spit back the results of the questionnaire? -->
-      </form>
+          <!-- then add the results thing that will spit back the results of the questionnaire? -->
+        </form>
+      </div>
+      <div id="questionButtons">
+        <!-- do something similar to the questions, only have the buttons appear when appropriate -->
+        <!-- make the next button a submit maybe> -->
+        <!-- change the buttons so that next is just next and there is a new submit button that appears on the last question -->
+        <button id="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+        <button name="nextButton" id="nextButton" type="submit" onclick="nextQuestion()">
+          Next
+        </button>
+      </div>
     </div>
     <!-- script for controlling the questions -->
     <script src="script.js"></script>
   </body>
+  <footer><p>:)</p></footer>
 </html>

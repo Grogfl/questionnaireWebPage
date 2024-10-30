@@ -32,8 +32,7 @@ function previousQuestion() {
 function showResults() {
   console.log('showresults called');
   document.getElementById('question' + currentQuestion).classList.remove('active');
-  const answer1 =
-    document.querySelector('input[name="question1"]:checked')?.value || 'No answer selected';
+  const answer1 = document.querySelector('input[name="question1"]:checked')?.value || 'Nothing';
 
   // also while on results need to hide the next button
   const resultsDiv = document.getElementById('results');
@@ -45,4 +44,9 @@ function showResults() {
 function hideResults() {
   const resultsDiv = document.getElementById('results');
   resultsDiv.style.display = 'none';
+}
+function validateInput() {
+  console.log('validateInput called');
+  event.preventDefault();
+  // validate the input of the questions so they make sense
 }
