@@ -1,0 +1,37 @@
+#introduction {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+#header h1 {
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+}
+#header p {
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 200;
+}
+.questionnaire input[type='text'] {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 16px;
+}
+.question {
+  display: none;
+  text-align: center;
+}
+/* define a size for this */
+.question.active {
+  display: block;
+  text-align: center;
+}
+#questionButtons {
+  text-align: center;
+}
+/* include some media queries to make it fit on other devices */
+@media screen {
+}
