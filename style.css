@@ -64,7 +64,7 @@ form {
   display: none;
   text-align: center;
 }
-/* define a size for this */
+
 .question.active {
   display: block;
   text-align: center;
@@ -88,7 +88,7 @@ form {
 #questionButtons button:hover {
   background-color: #a8b4a8;
 }
-/* include some media queries to make it fit on other devices */
+
 @media (max-width: 500px) and (min-height: 600px) {
   .questionnaireContainer {
     padding-top: 100px;
