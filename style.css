@@ -45,7 +45,16 @@ form {
 .questionArea select {
   max-width: 100px;
 }
-
+.questionArea input[type='radio'] {
+  accent-color: #b2ea2a;
+  width: 20px;
+  height: 20px;
+}
+.questionArea input[type='checkbox'] {
+  accent-color: #b2ea2a;
+  width: 20px;
+  height: 20px;
+}
 .questionnaire input[type='text'] {
   border: 1px solid #ccc;
   padding: 8px;
@@ -67,6 +76,7 @@ form {
 }
 #questionButtons button {
   padding: 10px 20px;
+  width: 100px;
   font-size: 1em;
   border-radius: 5px;
   border: none;
@@ -79,12 +89,18 @@ form {
   background-color: #a8b4a8;
 }
 /* include some media queries to make it fit on other devices */
-@media (max-width: 500px) {
+@media (max-width: 500px) and (min-height: 600px) {
+  .questionnaireContainer {
+    padding-top: 100px;
+  }
   .questionArea {
     max-height: 400px;
     min-height: 200px;
     font-size: 0.9em;
     width: 100%;
+  }
+  #questionButtons {
+    padding-top: 100px;
   }
   #questionButtons button {
     padding: 8px 16px;

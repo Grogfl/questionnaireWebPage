@@ -2,7 +2,13 @@ let currentQuestion = 1;
 let lastQuestion = null;
 
 function nextQuestion() {
-  document.getElementById('question' + currentQuestion).classList.remove('active');
+  const currentQuestionDiv = document.getElementById('question' + currentQuestion);
+  const input = currentQuestionDiv.querySelector('input, select');
+  if (input && !input.checkValidity()) {
+    alert('Please enter a valid input');
+    return;
+  }
+  currentQuestionDiv.classList.remove('active');
   if (document.getElementById('question' + (currentQuestion + 1))) {
     currentQuestion++;
   } else {
@@ -17,7 +23,6 @@ function nextQuestion() {
 function previousQuestion() {
   document.getElementById('question' + currentQuestion).classList.remove('active');
   hideResults();
-
   if (lastQuestion == null && currentQuestion > 1) {
     currentQuestion--;
   } else if (lastQuestion) {
@@ -38,11 +43,8 @@ function showResults() {
   const answer4 = document.querySelector('input[name="question4"]').value || 'Nothing';
   const activities = document.querySelectorAll('input[name = "question5"]:checked');
   const answer5 = Array.from(activities).map((checkbox) => checkbox.value);
-  // also while on results need to hide the next button
   const resultsDiv = document.getElementById('results');
   resultsDiv.style.display = 'block';
-  // add the results stuff here
-  // for the aditional comments what do?
   resultsDiv.innerHTML =
     '<h3>You Answered:</h3> <p>For question 1 you answered ' +
     answer1 +
@@ -59,10 +61,4 @@ function showResults() {
 function hideResults() {
   const resultsDiv = document.getElementById('results');
   resultsDiv.style.display = 'none';
-}
-function validateInput() {
-  console.log('validateInput called');
-  event.preventDefault();
-  // in validate check all the fucking data then in the next button add conditional on currentQuestionb++ is validate data returns true
-  // validate the input of the questions so they make sense
 }

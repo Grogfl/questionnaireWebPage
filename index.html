@@ -8,14 +8,11 @@
   </head>
   <body>
     <div id="introduction">
-      <p>Here is a simple questionnaire</p>
+      <h1>Questionnaire</h1>
     </div>
-    <!-- reconfig this shit the submit button isn't connected to the form -->
     <div class="questionnaireContainer">
-      <!-- add several questions with different input types -->
-      <form onsubmit="return validateInput()">
+      <form>
         <div class="questionArea">
-          <!--change to jQuery? seems like a better way to handle-->
           <div class="question active" id="question1">
             <p>What is your favorite movie genre?</p>
             <input type="radio" name="question1" value="action" /> Action<br />
@@ -23,12 +20,9 @@
             <input type="radio" name="question1" value="drama" /> Drama<br />
             <input type="radio" name="question1" value="horror" /> Horror<br />
           </div>
-          <!-- make the different questions use different input types -->
-          <!-- use a pattern so they can't input a letter or something? -->
           <div class="question" id="question2">
-            <p>What's your lucky number?</p>
-            <br />
-            <input required pattern="[0-9]+" type="text" name="question2" /><br />
+            <p>What's your lucky number?<br />Please answer using digits (0 - 9).</p>
+            <input pattern="([0-9]+|)" type="text" name="question2" /><br />
           </div>
           <div class="question" id="question3">
             <p>What is your preferred pet?</p>
@@ -52,16 +46,10 @@
             <input type="checkbox" name="question5" value="sports" /> Sports<br />
           </div>
           <div id="results"></div>
-
-          <!-- then add the results thing that will spit back the results of the questionnaire? -->
         </div>
         <div id="questionButtons">
-          <!-- do something similar to the questions, only have the buttons appear when appropriate -->
-          <!-- move the buttons into the form I think -->
-          <!-- make the next button a submit maybe> -->
-          <!-- change the buttons so that next is just next and there is a new submit button that appears on the last question -->
           <button id="previousButton" type="button" onclick="previousQuestion()">Previous</button>
-          <button name="nextButton" id="nextButton" type="submit" onclick="nextQuestion()">
+          <button name="nextButton" id="nextButton" type="button" onclick="nextQuestion()">
             Next
           </button>
         </div>
