@@ -12,9 +12,9 @@
     </div>
     <!-- reconfig this shit the submit button isn't connected to the form -->
     <div class="questionnaireContainer">
-      <div class="questionArea">
-        <!-- add several questions with different input types -->
-        <form onsubmit="return validateInput()">
+      <!-- add several questions with different input types -->
+      <form onsubmit="return validateInput()">
+        <div class="questionArea">
           <!--change to jQuery? seems like a better way to handle-->
           <div class="question active" id="question1">
             <p>What is your favorite movie genre?</p>
@@ -33,19 +33,17 @@
           <div class="question" id="question3">
             <p>What is your preferred pet?</p>
             <select name="question3">
-              <option value="Nothing"></option>
+              <option value="Nothing">None</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
-              <option value="none">None</option>
             </select>
           </div>
           <div class="question" id="question4">
             <p>How many siblings do you have?</p>
             <input type="number" name="question4" min="0" />
           </div>
-          <!-- addtional comments? -->
           <div class="question" id="question5">
             <p>Which of these leisure activities do you enjoy? (Select all that apply)</p>
             <input type="checkbox" name="question5" value="reading" /> Reading<br />
@@ -53,25 +51,23 @@
             <input type="checkbox" name="question5" value="cooking" /> Cooking<br />
             <input type="checkbox" name="question5" value="sports" /> Sports<br />
           </div>
-          <div class="question" id="question6"><textarea rows="4" cols="40"></textarea><br /></div>
           <div id="results"></div>
 
           <!-- then add the results thing that will spit back the results of the questionnaire? -->
-        </form>
-      </div>
-      <div id="questionButtons">
-        <!-- do something similar to the questions, only have the buttons appear when appropriate -->
-        <!-- move the buttons into the form I think -->
-        <!-- make the next button a submit maybe> -->
-        <!-- change the buttons so that next is just next and there is a new submit button that appears on the last question -->
-        <button id="previousButton" type="button" onclick="previousQuestion()">Previous</button>
-        <button name="nextButton" id="nextButton" type="submit" onclick="nextQuestion()">
-          Next
-        </button>
-      </div>
+        </div>
+        <div id="questionButtons">
+          <!-- do something similar to the questions, only have the buttons appear when appropriate -->
+          <!-- move the buttons into the form I think -->
+          <!-- make the next button a submit maybe> -->
+          <!-- change the buttons so that next is just next and there is a new submit button that appears on the last question -->
+          <button id="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+          <button name="nextButton" id="nextButton" type="submit" onclick="nextQuestion()">
+            Next
+          </button>
+        </div>
+      </form>
     </div>
     <!-- script for controlling the questions -->
     <script src="script.js"></script>
   </body>
-  <footer><p>:)</p></footer>
 </html>

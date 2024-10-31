@@ -63,5 +63,6 @@ function hideResults() {
 function validateInput() {
   console.log('validateInput called');
   event.preventDefault();
+  // in validate check all the fucking data then in the next button add conditional on currentQuestionb++ is validate data returns true
   // validate the input of the questions so they make sense
 }

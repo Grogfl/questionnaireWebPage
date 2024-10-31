@@ -6,14 +6,17 @@
 #header h1 {
   font-size: 25px;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, sans-serif;
   color: black;
 }
 #header p {
   font-size: 15px;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, sans-serif;
   font-weight: 200;
+}
+form {
+  width: 100%;
 }
 .questionnaireContainer {
   display: flex;
@@ -22,7 +25,7 @@
   width: 90%;
   max-width: 600px;
   margin: auto;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, sans-serif;
 }
 .questionArea {
   width: 100%;
@@ -39,6 +42,10 @@
   font-size: 1em;
   text-align: center;
 }
+.questionArea select {
+  max-width: 100px;
+}
+
 .questionnaire input[type='text'] {
   border: 1px solid #ccc;
   padding: 8px;
@@ -74,8 +81,10 @@
 /* include some media queries to make it fit on other devices */
 @media (max-width: 500px) {
   .questionArea {
-    min-height: 150px;
+    max-height: 400px;
+    min-height: 200px;
     font-size: 0.9em;
+    width: 100%;
   }
   #questionButtons button {
     padding: 8px 16px;
